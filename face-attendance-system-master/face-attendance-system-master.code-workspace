@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "face-attendance-system-master",
+			"path": "."
+		},
+		{
+			"name": "Silent-Face-Anti-Spoofing-master",
+			"path": "../Silent-Face-Anti-Spoofing-master"
+		}
+	],
+	"settings": {}
+}
