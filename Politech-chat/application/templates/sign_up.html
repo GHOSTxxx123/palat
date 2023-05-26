@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron">
+    <h2 style="text-align: center; color: #206aaa;">Sign Up Form</h2>
+    {% from "_formhelpers.html" import render_field %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.csrf_token() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+
+                {% if form.name.errors %}
+                    {{ form.name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class="form-control") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.firstname.label(class="form-control-label") }}
+                {{ form.firstname(class="form-control") }}
+                {% if form.firstname.errors %}
+                    {% for error in form.firstname.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.gmail.label(class="form-control-label") }}
+                {{ form.gmail(class="form-control") }}
+                {% if form.gmail.errors %}
+                    {% for error in form.gmail.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control") }}
+                {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                {% endif %}
+            </div>               
+            <div class="form-group">
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control") }}
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.kyrs.label(class="form-control-label") }}
+                {{ form.kyrs(class="form-control") }}
+                {% if form.kyrs.errors %}
+                    {% for error in form.kyrs.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+        <div class="form-group">
+            <a class="btn btn-warning" href="{{ url_for('sign_in') }}" role="button">Вход</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
