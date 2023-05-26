@@ -1,0 +1,7 @@
+.cricle {
+height: 150px;
+width: 150px;
+border-radius: 50%;
+display: inline-block;
+align-items: center;
+}
